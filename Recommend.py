@@ -96,4 +96,5 @@ def get_data():
 
 # Chạy ứng dụng Flask
 if __name__ == '__main__':
-    app.run(port=5555)
+    port = int(os.environ.get('PORT', 5555))  # Lấy cổng từ biến môi trường hoặc dùng 5555 nếu không có
+    app.run(host='0.0.0.0', port=port) # Chạy ứng dụng
